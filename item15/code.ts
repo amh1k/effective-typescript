@@ -80,3 +80,36 @@ class UIWidget2 {
     /* ... */
   }
 }
+function getUserInfo(userId: string) {
+  // ...
+  return {
+    userId,
+    name,
+    age,
+    height,
+    weight,
+    favoriteColor,
+  };
+}
+// Return type inferred as { userId: string; name: string; age: number, ... }
+
+type UserInfo = ReturnType<typeof getUserInfo>;
+
+/*
+Things to Remember
+The DRY (don’t repeat yourself) principle applies to types as much as
+it applies to logic.
+Name types rather than repeating them. Use extends to avoid
+repeating fields in interfaces.
+Build an understanding of the tools provided by TypeScript to map
+between types. These include keyof, typeof, indexing, and mapped
+types.
+Generic types are the equivalent of functions for types. Use them to
+map between types instead of repeating type-level operations.
+Familiarize yourself with generic types defined in the standard library,
+such as Pick, Partial, and ReturnType.
+Avoid over-application of DRY: make sure the properties and types
+you’re sharing are really the same thing.
+
+
+*/
